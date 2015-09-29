@@ -3,8 +3,8 @@
   Weight = [];
   weightedPoints = [];
 
-  centreX = ($('canvas').width()/2);
-  centreY = ($('canvas').height()/2);
+  centreX = ($('#myCanvas').width()/2);
+  centreY = ($('#myCanvas').height()/2);
 
   circleRadius = 300;
 
