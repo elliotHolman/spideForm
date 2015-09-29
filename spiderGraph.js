@@ -29,7 +29,7 @@ $(window).load(function(){
   function generateQuestions(){
     scoredOutOf = $('.scoredOutOf').val();
     numberOfQuestions = $('.input').val();
-    if ( (2 < numberOfQuestions && numberOfQuestions <= 12 && 2 <= scoredOutOf <= 15 )){
+    if ( (2 < numberOfQuestions && numberOfQuestions <= 12 && 2 <= scoredOutOf && scoredOutOf <= 15 )){
     content = "";
     for(i=0;i<numberOfQuestions;i++){
       content += "Question ";
@@ -52,10 +52,11 @@ $(window).load(function(){
     $(".questions").html(content);
     $('.errorMessage').html('No Error');
     }else if ( scoredOutOf< 2 || 15 < scoredOutOf ) {
-      $('.errorMessage')
+      $('.questions').html('');
+      $('.errorMessage').html("Scored out of - Limit set to =>2, <=15 ")
     }
     else{
-      $('.errorMessage').html('Limit set to more than 2, less than 12');
+      $('.errorMessage').html('Number of questions - Limit set to more than 2, less than 12');
       $('.questions').html('');
     }
     if ( isNaN(numberOfQuestions) ){
@@ -63,7 +64,8 @@ $(window).load(function(){
       $('.questions').html('');
     }
     if (numberOfQuestions == ""){
-      $('.errorMessage').html('We don\'t have a value')
+      $('.errorMessage').html('We don\'t have a value');
+      $('.questions').html('');
     }
   }
 
