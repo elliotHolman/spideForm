@@ -6,10 +6,14 @@
 $(window).load(function(){
   centreX = ($('#myCanvas').width()/2);
   centreY = ($('#myCanvas').height()/2);
+  circleRadius = ($('#myCanvas').width()-100)/2;
+
+  $('canvas').click(function(){
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.clearRect(0, 0, canvas.width, canvas.height);
+  })
 })
-
-
-  circleRadius = 300;
 
   function pushToArrays(){
     Points = [];
@@ -135,14 +139,6 @@ $(window).load(function(){
         ctx.lineTo(weightedPoints[i][0],weightedPoints[i][1]);
       };
       ctx.closePath();
-      ctx.strokeStyle = '#999';
+      ctx.strokeStyle = '#99B';
       ctx.stroke();
   }
-
-$('canvas').click(function(){
-  var canvas = document.getElementById('myCanvas');
-  var context = canvas.getContext('2d');
-  context.clearRect(0, 0, canvas.width, canvas.height);
-})
-
-generateQuestions();
