@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+
+<canvas id="myCanvas" width="700" height="700" style="border:1px solid #d3d3d3; display: inline-block; float: left;"></canvas>
+
+<div style="border:1px solid #d3d3d3; display: inline-block; width:500px; margin-left: 50px; padding: 30px;">
+
+  How Many Questions? <input value="10" class="input"> <span onclick="generateQuestions()" class="submitNumberOfQuestions" style="background-color: #999; color: #fff ;padding:5px; cursor: pointer;">Generate Questions</span>
+
+  Scored Out of? <input value="6" class="scoredOutOf">
+
+  <p>Error : <span class="errorMessage">No Error</span></p>
+  <hr style="margin:25px 0 20px 0;">
+  <div class="questions"></div>
+</div>
+
+</body>
+</html>
